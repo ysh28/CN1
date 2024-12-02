@@ -1,0 +1,49 @@
+P4 DJIKTRA
+
+import heapq
+
+def dijkstra(graph, start):
+    if start not in graph:
+        print(f"Start node '{start}' not found in the graph!")
+        return {}
+    
+    queue = [(0, start)]
+    distances = {node: float('inf') for node in graph}
+    distances[start] = 0
+    
+    while queue:
+        current_distance, current_node = heapq.heappop(queue)
+        
+        if current_distance > distances[current_node]:
+            continue
+        
+        for neighbor, weight in graph[current_node]:
+            distance = current_distance + weight
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(queue, (distance, neighbor))
+    
+    return distances
+
+def main():
+    graph = {}
+    for _ in range(int(input("Enter number of nodes: "))):
+        graph[input("Enter node: ")] = []
+    
+    for _ in range(int(input("Enter number of edges: "))):
+        u, v, w = input("Enter edge (node1 node2 weight): ").split()
+        graph[u].append((v, int(w)))
+        graph[v].append((u, int(w)))
+    
+    start_node = input("Enter start node: ")
+    
+    # Perform the shortest path calculation if the start node is valid
+    distances = dijkstra(graph, start_node)
+    
+    if distances:
+        print(f"\nShortest distances from {start_node}:")
+        for node, dist in distances.items():
+            print(f"{node}: {dist}")
+
+if _name_ == "_main_":
+    main()

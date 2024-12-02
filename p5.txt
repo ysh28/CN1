@@ -1,0 +1,26 @@
+P5 CRC
+
+def calculate_crc(msg, div):
+    m_len = len(msg)
+    d_len = len(div)
+    
+    
+    dividend = msg + '0' * (d_len - 1)
+    temp = list(dividend)  
+
+    
+    for i in range(m_len):
+        if temp[i] == '1':  
+            for j in range(d_len):
+                temp[i + j] = '0' if temp[i + j] == div[j] else '1'
+
+    
+    crc = ''.join(temp[m_len:])
+    return crc
+
+message = input("Enter the message (binary): ")
+divisor = input("Enter the divisor (binary): ")
+
+crc = calculate_crc(message, divisor)
+
+print(f"CRC: {crc}")

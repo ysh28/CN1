@@ -1,0 +1,69 @@
+S 6 HAMMING 
+C CODE
+#include <stdio.h>
+
+int main() {
+    int data[7] = {0};          
+    int dataatrec[7] = {0};     
+    int c, c1, c2, c3, i;
+
+   
+    printf("Enter 4 bits of data one by one (0 or 1):\n");
+    for (i = 0; i < 4; i++) {
+        scanf("%d", &data[2 + i]);  
+        if (data[2 + i] < 0 || data[2 + i] > 1) {
+            printf("Invalid input! Please enter 0 or 1.\n");
+            return 1;
+        }
+    }
+
+    data[0] = data[2] ^ data[4] ^ data[6];
+    data[1] = data[2] ^ data[5] ^ data[6];  
+    data[3] = data[4] ^ data[5] ^ data[6]; 
+
+  
+    printf("\nEncoded data is:\n");
+    for (i = 0; i < 7; i++) {
+        printf("%d ", data[i]);
+    }
+
+    
+    printf("\n\nEnter received data bits one by one (0 or 1):\n");
+    for (i = 0; i < 7; i++) {
+        scanf("%d", &dataatrec[i]);
+        // Validate input
+        if (dataatrec[i] < 0 || dataatrec[i] > 1) {
+            printf("Invalid input! Please enter 0 or 1.\n");
+            return 1;
+        }
+    }
+
+  
+    c1 = dataatrec[0] ^ dataatrec[2] ^ dataatrec[4] ^ dataatrec[6]; 
+    c2 = dataatrec[1] ^ dataatrec[2] ^ dataatrec[5] ^ dataatrec[6]; 
+    c3 = dataatrec[3] ^ dataatrec[4] ^ dataatrec[5] ^ dataatrec[6];  
+    c = c3 * 4 + c2 * 2 + c1;
+
+    if (c == 0) {
+        printf("\nNo error in the transmission of data.\n");
+    } else {
+        printf("\nError at position %d (1-based index).\n", c);
+        printf("\nData sent: ");
+        for (i = 0; i < 7; i++) {
+            printf("%d ", data[i]);
+        }
+        printf("\nData received: ");
+        for (i = 0; i < 7; i++) {
+            printf("%d ", dataatrec[i]);
+        }
+
+       
+        dataatrec[c - 1] = !dataatrec[c - 1]; 
+        printf("\nCorrected message is:\n");
+        for (i = 0; i < 7; i++) {
+            printf("%d ", dataatrec[i]);
+        }
+    }
+
+    return 0;
+}
