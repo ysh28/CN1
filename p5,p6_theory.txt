@@ -1,0 +1,17 @@
+P5
+1)Shortest Path Problem:
+The shortest path problem involves finding the path between two nodes in a graph such that the total distance or cost is minimized. It is relevant in real-world scenarios like route planning in navigation systems, network data routing, and supply chain management where finding the most efficient path saves time, money, and resources.
+2)Dijkstra Algorithm Logic:
+Dijkstra's algorithm solves the shortest path problem by starting at the source node and iteratively exploring the neighboring nodes. It assigns a tentative distance to each node, starting with zero for the source. The algorithm then selects the node with the smallest tentative distance, updates the distances of its neighbors, and repeats until the destination node is reached or all nodes are processed. It ensures the shortest path by always choosing the node with the minimum cost at each step.
+
+P6
+1)CRC (Cyclic Redundancy Check):
+CRC is an error-detecting code used to detect accidental changes in raw data. It treats the data as a large binary number and divides it by a predefined divisor (called the "generator polynomial"). The remainder of this division is appended to the data as a CRC value. At the receiver's end, the same division is performed; if the remainder is zero, the data is assumed to be correct; otherwise, an error is detected.
+2)Basic Logic Behind CRC:
+In CRC, the sender appends a checksum (CRC value) to the data by dividing the data (message) by a fixed generator polynomial using binary division. The remainder from this division becomes the CRC. The receiver divides the received message (including the CRC) by the same polynomial. If the remainder is zero, the message is considered error-free. Otherwise, an error is detected. This method ensures detection of common transmission errors like single-bit errors, burst errors, and more.
+
+
+
+
+
+

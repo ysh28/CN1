@@ -1,0 +1,60 @@
+S1
+1)Network topologies are essential as they define the arrangement and interconnection of devices in a network. This structure determines how data flows, ensuring efficient communication. Topologies like star, bus, ring, and mesh influence performance, scalability, reliability, and cost. Choosing the right topology optimizes resource use, minimizes delays, and enhances network resilience to failures.
+2)Network topologies describe the physical or logical arrangement of devices in a network. The main types are:
+Bus Topology: Devices connect to a single central cable. It’s simple and cost-effective but prone to failure if the main cable breaks.
+Star Topology: Devices connect to a central hub or switch. It’s reliable and easy to manage but depends on the central hub.
+Ring Topology: Devices form a circular chain, with data traveling in one direction. Failure in one link can disrupt the network unless a dual ring is used.
+Mesh Topology: Every device connects to every other device. It provides high reliability but is expensive and complex.
+Tree Topology: Combines star and bus topologies in a hierarchical structure. It’s scalable but relies on the main cable.
+Hybrid Topology: Mixes two or more types of topologies to suit specific needs, offering flexibility.
+
+S2
+1)Advantages of IoT-based Home Automation: IoT-enabled home automation allows remote control and monitoring of home devices via the internet. It enhances convenience, energy efficiency, and security by automating tasks like lighting, climate control, and surveillance. Smart systems also offer real-time alerts and customization, improving quality of life.
+2)IoT Remote Server Functions and Applications: IoT remote servers store, process, and manage data from connected devices. They enable centralized control, analytics, and device synchronization. Applications include smart homes, healthcare monitoring, industrial automation, and fleet management, ensuring efficient and scalable IoT operations.
+3)Switch Functions and Applications: Switches are networking devices that connect multiple devices within a local area network (LAN). They efficiently direct data packets to their intended destinations using MAC addresses, reducing collisions. Applications include office networks, data centers, and homes to manage traffic and enhance performance.
+4)Wireless Router Functions and Applications: Wireless routers provide internet access by connecting wired networks to wireless devices. They manage traffic, assign IP addresses, and ensure secure data transmission. Applications include home Wi-Fi networks, public hotspots, and business environments, enabling seamless connectivity for multiple devices.
+
+S3&S4
+1)Straight
+Ow O Gw B Bw G Brw Br (both)
+1)crossover
+Ow O Gw B Bw G Brw Br (side1)
+Gw G Ow Brw Br O B Bw (side2)
+1-3,2-6,3-1,4-4,5-5,6-2,7-7,8-8
+2)Features and Types of Ethernet Cables: Ethernet cables provide high-speed data transfer for wired networks, supporting Gigabit speeds and reduced interference. Types:
+Cat5: Speeds up to 100 Mbps for basic networks.
+Cat5e: Enhanced for Gigabit speeds with reduced crosstalk.
+Cat6: Higher speeds with better insulation for reduced interference.
+Cat6a: Extended bandwidth and less signal loss for advanced applications.
+3)UTP (Unshielded Twisted Pair) and STP (Shielded Twisted Pair):
+Aspect	UTP	STP
+Cost	Cheaper due to lack of shielding materials.	More expensive due to added shielding.
+Weight	Lightweight, easier to handle and install.	Heavier because of shielding material.
+Installation	Simple and flexible to install.	Requires grounding and careful handling.
+Performance	Adequate for environments with minimal EMI.	Performs better in high-EMI environments.
+Durability	Less durable in harsh conditions.	More durable due to added protection.
+Signal Quality	More prone to signal loss and crosstalk.	Reduces crosstalk and provides cleaner signals.
+Applications	Ideal for home and office LANs.	Suitable for industrial and outdoor settings.
+
+S5
+1)Process of Capturing Packets with Wireshark:
+Launch Wireshark and choose the appropriate network interface (e.g., Wi-Fi or Ethernet). Click "Start" to capture network traffic in real-time. Apply filters like ip.addr==192.168.1.1 to focus on specific traffic. Stop the capture when enough data is collected. Packets are displayed in three panes: the packet list, details, and raw data. Analyze captured packets for insights.
+2)Key Components of a Captured Packet:
+MAC Address: Source and destination hardware addresses, used for local network communication.
+IP Address: Source and destination IPs for identifying devices on different networks.
+TCP/UDP Ports: Define application-specific communication, like port 443 for HTTPS.
+Protocol: Specifies the transport or application protocol (e.g., TCP, UDP, HTTP).
+Sequence/ACK Numbers: Used in TCP for tracking and managing reliable communication.
+Payload/Data: Contains the actual transmitted data or message.
+3)TCP (Transmission Control Protocol): A reliable, connection-oriented protocol ensuring data is delivered in order without errors.
+UDP (User Datagram Protocol): A connectionless protocol offering fast, lightweight data transfer but without reliability guarantees.
+HTTP (Hypertext Transfer Protocol): A protocol for transferring web pages and other resources over the internet.
+DNS (Domain Name System): A service that translates human-readable domain names (e.g., www.example.com) into IP addresses.
+ICMP (Internet Control Message Protocol): A protocol used for error reporting and network diagnostics (e.g., ping).
+
+S6
+1)Roles of Parity Bits in Hamming Code:
+Parity bits are inserted at specific positions in the data to ensure error detection and correction. Each parity bit checks the parity (even or odd) of certain bits in the codeword. They help identify the position of an error if it occurs by creating a unique binary pattern corresponding to the erroneous bit.
+2)Single-Bit Error Correction in Hamming Code:
+When a received codeword has an error, the parity bits are recalculated and compared with the received parity bits. The comparison generates a syndrome (a binary number) that identifies the position of the error. Correcting the error involves flipping the bit at the identified position, ensuring accurate data retrieval.
+
